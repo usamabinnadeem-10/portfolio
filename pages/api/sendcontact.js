@@ -1,6 +1,6 @@
 import rateLimit from "../../utils/rate-limit";
 import { Webhook, MessageBuilder } from "webhook-discord";
-const Hook = new Webhook(process.env.DISCORD_WEBHOOK);
+const Hook = new Webhook(process.env.NEXT_PUBLIC_DISCORD_WEBHOOK);
 
 const limiter = rateLimit({
   interval: 60 * 60 * 1000,
@@ -9,6 +9,7 @@ const limiter = rateLimit({
 
 export default async function handler(req, res) {
   try {
+    console.log(req.body);
     await limiter.check(res, 3, "CACHE_TOKEN");
     if (req.method === "POST") {
       const msg = new MessageBuilder()
@@ -35,20 +36,17 @@ export default async function handler(req, res) {
         });
       }
     } else {
-      res
-        .status(405)
-        .json({
-          type: "error",
-          message: "method not allowed",
-        });
+      res.status(405).json({
+        type: "error",
+        message: "method not allowed",
+      });
     }
   } catch {
     //rate limited
-    res
-      .status(429)
-      .json({
-        type: "error",
-        message: "To avoid spam, we limit to only 2 messages sent per ip in an hour...",
-      });
+    res.status(429).json({
+      type: "error",
+      message:
+        "To avoid spam, we limit to only 2 messages sent per ip in an hour...",
+    });
   }
 }

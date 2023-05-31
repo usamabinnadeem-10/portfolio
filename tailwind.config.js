@@ -8,6 +8,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "550px",
+        xxs: "450px",
+        tiny: "400px",
+      },
       colors: {
         "brand-fb": "#0165E1",
         "brand-ig": "#FCAF45",
@@ -36,6 +41,6 @@ module.exports = {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ['light', 'dracula']
-  }
+    themes: ["light", "dracula"],
+  },
 };

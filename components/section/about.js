@@ -4,19 +4,21 @@ import { useState, useEffect } from "react";
 import Waypoints from "../dust/waypoints";
 
 export default function About() {
-  let umur = sAge("Nov 16 2007");
-  let [gh, setGh] = useState('Fetching...');
+  let age = sAge("Mar 15 1997");
+  let [gh, setGh] = useState("Fetching...");
   useEffect(() => {
-    (async() => {
+    (async () => {
       try {
-        const res = await fetch("https://api.github.com/users/JastinXyz");
+        const res = await fetch(
+          "https://api.github.com/users/usamabinnadeem-10"
+        );
         const data = await res.json();
         setGh(data);
       } catch {
-        setGh({ public_repos: "several" })
+        setGh({ public_repos: "several" });
       }
-    })()
-  }, [])
+    })();
+  }, []);
 
   return (
     <>
@@ -33,7 +35,7 @@ export default function About() {
         ></path>
       </svg>
       <div className="bg-[#e3f2fd] px-6">
-        <Waypoints target={'toabout'}>
+        <Waypoints target={"toabout"}>
           <section id="about" className="text-black py-20">
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="flex justify-center md:mb-0 mb-20 py-5">
@@ -65,27 +67,47 @@ export default function About() {
                   data-aos-duration="1000"
                 ></div>
                 <p className="mt-2">
-                  {`I live in Purwokerto, Indonesia. My full name is Jastin
-                  Linggar Tama, just call me Jastin. I'm ${umur} years old. A Software
-                  Engineering student, I have known Programming since 2020 and
-                  am quite familiar with HTML, CSS, Javascript and several other
-                  languages ​​& frameworks.`}
+                  {`Hi I am Usama, a full-stack web engineer from Pakistan! I'm a passionate and
+                  experienced full-stack developer with over 3 years of hands-on
+                  experience in creating web applications. My expertise lies in
+                  utilizing cutting-edge technologies to build efficient and
+                  scalable solutions.`}
                 </p>
-                <p className="mt-5">
-                  A Little Story, In the past, I preferred to learn about Back
-                  End but when I got to know Front End frameworks like NextJs, I
-                  think now I prefer to learn about Front End. But I&apos;m also
-                  learning New Things about Back End in PHP now. I don&apos;t
-                  know, I&apos;m a person who likes to learn new things but
-                  rarely takes it seriously.
+                <p className="mt-2">
+                  {`On the frontend, I excel in working with
+                  React, TypeScript, and Next.js. I have a deep understanding of
+                  these frameworks and leverage their power to develop engaging
+                  and user-friendly interfaces. I enjoy crafting intuitive user
+                  experiences, ensuring seamless navigation and responsiveness
+                  across various devices. In the realm of backend development,
+                  I'm skilled in Node.js and Python Django. With a strong
+                  command of server-side technologies, I can design and
+                  implement robust APIs, manage databases, and handle server
+                  operations effectively.`}
                 </p>
-                <p className="mt-5">
-                  One more thing, I have created{" "}
-                  <span className="font-bold">{gh.public_repos}</span> public
-                  repository on my Github. Various repositories such as
-                  templates or even just a package to make things easier. There
-                  are several serious projects but now they are rarely developed
-                  due to conflicts with school work.
+                <p className="mt-2">
+                  {`Having worked in the industry for startups and enormous ventures,
+                  I have learned through experience and have developed deep understanding of web development.
+                  I prioritize clean code architecture,
+                  performance optimization, and security best practices to
+                  deliver high-quality backend solutions. My proficiency as a
+                  full-stack developer allows me to seamlessly integrate
+                  frontend and backend functionalities, creating cohesive and
+                  feature-rich applications.`}
+                </p>
+                <p className="mt-2">
+                  {`  I take pride in my ability to
+                  translate complex business requirements into elegant,
+                  maintainable, and scalable code. Throughout my career, I have
+                  collaborated with diverse teams, bringing projects from
+                  conception to completion. I thrive in agile environments,
+                  valuing effective communication and teamwork. I'm always eager
+                  to learn new technologies and stay updated with the latest
+                  industry trends. Please explore my portfolio to see some of
+                  the projects I've worked on. If you're interested in
+                  collaborating or have any questions, feel free to reach out to
+                  me. I'm excited to contribute my skills and expertise to the
+                  success of your next project!`}
                 </p>
                 {/* <div class="tooltip tooltip-open tooltip-right mt-5" data-tip={`${gh.followers} Followers, ${gh.following} Following`}>
                 <button class="btn"><FaGithub className="mr-2 w-5 h-5" /> Github</button>

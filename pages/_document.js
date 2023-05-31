@@ -7,7 +7,7 @@ export default function Document() {
         <html data-theme="light" />
         <meta
           name="description"
-          content="a software engineering student who loves to code."
+          content="A fullstack web developer with over 3 years of industry experience"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
