@@ -127,7 +127,7 @@ export default function Projects() {
                 rel="noopener noreferrer"
               >
                 <FaGithub className="mr-2 w-5 h-5" />
-                View all my Porjects. <FaAngleRight className="ml-2" />
+                View all my Projects. <FaAngleRight className="ml-2" />
               </a>
             </div>
           </section>
