@@ -68,7 +68,7 @@ export default function About() {
                 ></div>
                 <p className="mt-2">
                   {`Hi I am Usama, a full-stack web engineer from Pakistan! I'm a passionate and
-                  experienced full-stack developer with over 3 years of hands-on
+                  experienced full-stack developer with around 5 years of hands-on
                   experience in creating web applications. My expertise lies in
                   utilizing cutting-edge technologies to build efficient and
                   scalable solutions.`}
